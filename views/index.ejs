@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+      <div class="form p-10 text-white">
+        <form action="/create" method="post">
+          <input type="text" class="w-full block px-5 py-2 mt-2 bg-zinc-800 rounded-lg" placeholder="enter title" name="title" />
+          <textarea name="details" class="w-full block px-5 py-2 resize-none mt-2 bg-zinc-800 rounded-lg" placeholder="enter details"></textarea>
+          <input
+            type="submit"
+            class="bg-blue-500 rounded text-white mt-2 px-5 py-2"
+            placeholder="create task"
+          />
+        </form>
+      </div>
+      <div class="task p-10 flex gap-3 flex-wrap">
+        <% if(files.length>0){ %>
+            <% files.forEach((val)=>{ %>
+                <div class="bg-zinc-800 p-4 rounded-lg w-72 px-3 py-4">
+                    <h1 class="text-white text-2xl"><%= val%></h1>
+                    <div class="flex justify-between">
+                        <a href="/files/<%= val%>" class="text-blue-500 inline-block mt-3">Read more</a>
+                        <a href="/edit/<%= val%>" class="text-zinc-500 inline-block mt-3">Edit filename</a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else{ %>
+            <h3 class="text-zinc-600">No tasks yet</h3>
+        <% } %>
+        <!-- <div class="bg-zinc-800 p-4 rounded-lg w-72 px-3 py-4">
+            <h1 class="text-white text-2xl">Some Task Here</h1>
+            <a href="" class="text-blue-500 inline-block mt-3">Read more..</a>
+        </div>
+        <div class="bg-zinc-800 p-4 rounded-lg w-72 px-3 py-4">
+            <h1 class="text-white text-2xl">Some Task Here</h1>
+            <a href="" class="text-blue-500 inline-block mt-3">Read more..</a>
+        </div> -->
+        <!-- <div class="bg-zinc-800 p-4 rounded-lg w-72 px-3 py-4">
+            <h1 class="text-white text-2xl">Some Task Here</h1>
+            <a href="" class="text-blue-500 inline-block mt-3">Read more..</a>
+        </div> -->
+      </div>
+    </div>
+  </body>
+</html>
