@@ -10,7 +10,7 @@ app.set("view engine","ejs");
 
 app.get("/", (req,res)=>{
     fs.readdir("./files",(err,files)=>{
-        res.render('index', {files});
+        res.render('index', {files}); 
     })
 })
 app.get("/files/:filename", (req,res)=>{
