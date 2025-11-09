@@ -3,6 +3,10 @@
 A simple Task Manager web application built with Express.js, EJS, and TailwindCSS.
 It lets you create, view, and rename tasks (stored as text files).
 
+🚀 Live Demo
+
+👉 https://jatinsinghal1411.github.io/Task-Manager/
+
 
 🚀 Features
 
